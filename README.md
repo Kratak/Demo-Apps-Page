@@ -1,17 +1,21 @@
-## Demo page wrapper
+## Demo page grid wrapper
 
-### version 1.0.0
+### Status: WIP
 
-### Whats include
+### version 0.1.0
 
-- Bunch of configs like:
-    - `nodes`
-    - `tslint`
-    - `i18n`
-    - `.gitignore`
+It is simple Page wrapper for my another apps.
+Wrapper will includes whole integration for: 
+- Redux
+- i18n translation
+- color themes handling
+- rwd / scaling  
 
 ### Changelog 
 
-#### 1.0.0
-Initial with basic react app and gitignore
+#### 0.1.0
+- redux integration 
+
+#### 0.0.0
+- Initial with basic react app and gitignore
 `README.md` update 
