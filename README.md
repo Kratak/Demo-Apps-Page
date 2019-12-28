@@ -20,6 +20,7 @@ Wrapper will includes whole integration for:
 - cleaning post react components
 - semantic release
 - added `CHANGELOGS.md` file
+- added basics of Currency App as working sample
 
 #### v0.1.0
 - Initial with basic react app and gitignore

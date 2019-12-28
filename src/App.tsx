@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { applyMiddleware, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { reducers } from "./reducers";
+import CurrencyApp from "./apps/currency/CurrencyApp";
 
 declare global {
   interface Window {
@@ -21,7 +22,7 @@ const store = createStore(reducers, enhancer);
 const App: React.FC = () => {
   return (
     <Provider store={store}>
-      <div>test</div>
+      <CurrencyApp>test</CurrencyApp>
     </Provider>
   );
 };
