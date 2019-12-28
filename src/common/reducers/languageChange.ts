@@ -1,15 +1,17 @@
 import { AnyAction } from "redux";
 import { Language } from "../interfaces/avaibleLangueges";
-import * as types from "../constans/actionTypes";
+import { ActionTypes } from "../constans/actionTypes";
 
 export interface PageSettingsFields {
   language: Language;
+  locale: Language;
 }
 
 export interface LanguageChangeState extends PageSettingsFields {}
 
 export const initialPageSettingsState: LanguageChangeState = {
-  language: Language.Pl
+  language: Language.Pl,
+  locale: Language.Pl
 };
 
 export const languageChangeReducer = (
@@ -17,7 +19,7 @@ export const languageChangeReducer = (
   action: AnyAction
 ): LanguageChangeState => {
   switch (action.type) {
-    case types.ADD_TODO: {
+    case ActionTypes.CHANGE_LANGUAGE: {
       return {
         ...state,
         language: action.payload.language
