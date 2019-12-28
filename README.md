@@ -15,7 +15,7 @@ Wrapper will includes whole integration for:
 
 ### Changelog 
 
-#### v0.1.0
+#### v0.1.1
 - redux integration 
 - cleaning post react components
 - semantic release
