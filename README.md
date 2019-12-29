@@ -1,10 +1,14 @@
-## Demo page grid wrapper
+# Demo page grid wrapper
 
-### Status: WIP
+### Status
 
-### [master branch live @netlify](https://suspicious-roentgen-a39454.netlify.com/)
+**WORK IN PROGRES**
 
-### version v0.1.1
+### Live page 
+
+[master branch live @netlify](https://suspicious-roentgen-a39454.netlify.com/)
+
+### version v0.1.2
 
 It is simple Page wrapper for my another apps.
 Wrapper will includes whole integration for: 
@@ -13,10 +17,18 @@ Wrapper will includes whole integration for:
 - color themes handling
 - rwd / scaling  
 
+### License
+[MIT License](https://github.com/Kratak/Demo-Apps-Page/blob/master/LICENSE)
+
+##
+
 ### Changelog 
 
+#### v0.1.2
+- `react-router` integration with `connected-react-router`
+
 #### v0.1.1
-- redux integration 
+- `redux` integration 
 - cleaning post react components
 - semantic release
 - added `CHANGELOGS.md` file
