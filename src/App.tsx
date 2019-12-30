@@ -1,18 +1,25 @@
-import React from "react";
-import { Provider } from "react-redux";
-import CurrencyApp from "./apps/currency/CurrencyApp";
-import { configureStore, history } from "./configureStore";
-import { ConnectedRouter } from "connected-react-router";
+import React from 'react';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
+import { configureStore, history } from './configureStore';
+import Navigation from './common/components/Navigation';
+import BodyContent from './common/components/BodyContetn';
+import GlobalStyles from './common/components/GlobalStyle';
 
 const store = configureStore();
 
 const App: React.FC = () => {
   return (
-    <Provider store={store}>
-      <ConnectedRouter history={history}>
-        <CurrencyApp />
-      </ConnectedRouter>
-    </Provider>
+    <>
+      <GlobalStyles />
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <BodyContent>
+            <Navigation />
+          </BodyContent>
+        </ConnectedRouter>
+      </Provider>
+    </>
   );
 };
 
