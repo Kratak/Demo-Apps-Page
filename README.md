@@ -26,6 +26,11 @@ Wrapper will includes whole integration for:
 
 #### v0.1.2
 - `react-router` integration with `connected-react-router`
+- simple dashboards
+- styled-components and lodash support
+- global styles and *rem* approach
+- prettier config
+- css standardisation 
 
 #### v0.1.1
 - `redux` integration 
