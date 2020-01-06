@@ -10,7 +10,7 @@ You can check current work at [pulls] and plans at [issues].
 
 [master branch live @netlify](https://suspicious-roentgen-a39454.netlify.com/)
 
-### version v0.1.4
+### version v0.2.0
 
 It is simple Page wrapper for my another apps.
 Wrapper will includes whole integration for: 

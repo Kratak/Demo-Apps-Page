@@ -1,4 +1,4 @@
-#### v0.1.4
+#### v0.2.0 NBP API integration
 - `axios` added
 - NBP currency rates provider
 - api constans

@@ -1,10 +1,10 @@
-import * as React from "react";
-import { PageSettingsFields } from "../../common/reducers/languageChange";
-import { Language } from "../../common/interfaces/avaibleLangueges";
-import { changeLanguage } from "../../common/actions/languageChange";
-import { bindActionCreators, Dispatch } from "redux";
-import { connect } from "react-redux";
-import { CombineStoreFields } from "../../reducers";
+import * as React from 'react';
+import { bindActionCreators, Dispatch } from 'redux';
+import { connect } from 'react-redux';
+import { PageSettingsFields } from '../../common/reducers/languageChange';
+import { Language } from '../../common/interfaces/avaibleLangueges';
+import { changeLanguage } from '../../common/actions/languageChange';
+import { CombineStoreFields } from '../../reducers';
 
 interface DispatchProps {
   pageSettings: typeof changeLanguage;
@@ -24,7 +24,7 @@ class CurrencyApp extends React.Component<Props, State> {
     super(props);
 
     this.state = {
-      language: Language.Eng
+      language: Language.Eng,
     };
   }
 
@@ -40,7 +40,7 @@ class CurrencyApp extends React.Component<Props, State> {
   public render(): JSX.Element {
     return (
       <div>
-        <div style={{ width: 250, height: 250, backgroundColor: "red" }}>
+        <div style={{ width: 250, height: 250, backgroundColor: 'red' }}>
           current language is {this.props.pageSettingsState.language}
         </div>
         <div onClick={() => this.props.pageSettings(Language.Pl)}>
@@ -55,11 +55,11 @@ class CurrencyApp extends React.Component<Props, State> {
 }
 
 const mapStateToProps = (state: CombineStoreFields): StateProps => ({
-  pageSettingsState: state.languageChange
+  pageSettingsState: state.languageChange,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
-  ...bindActionCreators({ pageSettings: changeLanguage }, dispatch)
+  ...bindActionCreators({ pageSettings: changeLanguage }, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CurrencyApp);
