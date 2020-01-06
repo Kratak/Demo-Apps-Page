@@ -20,7 +20,11 @@ const App: React.FC = () => {
           <BodyContent>
             <Navigation />
             <Switch>
-              <Route exact path={appUrls.exchangeRateApp} component={CurrencyApp} />
+              <Route
+                exact
+                path={appUrls.exchangeRateApp}
+                component={CurrencyApp}
+              />
               <Route exact path={appUrls.weatherApp} component={CurrencyApp} />
               <Route exact path={appUrls.gpApp} component={CurrencyApp} />
             </Switch>
