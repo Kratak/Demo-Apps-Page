@@ -2,6 +2,7 @@
 - `axios` added
 - NBP currency rates provider
 - api constans
+- `date-fns` added
 
 #### v0.1.3
 - Navigation component

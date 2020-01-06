@@ -4,6 +4,8 @@
 
 **WORK IN PROGRES**
 
+You can check current work at [pulls] and plans at [issues].
+
 ### Live page 
 
 [master branch live @netlify](https://suspicious-roentgen-a39454.netlify.com/)
@@ -19,3 +21,7 @@ Wrapper will includes whole integration for:
 
 ### License
 [MIT License](https://github.com/Kratak/Demo-Apps-Page/blob/master/LICENSE)
+
+
+[branches]: https://github.com/Kratak/Demo-Apps-Page/pulls
+[issues]: https://github.com/Kratak/Demo-Apps-Page/issues
