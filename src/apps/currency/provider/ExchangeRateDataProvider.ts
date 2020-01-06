@@ -1,12 +1,16 @@
 import { AxiosResponse } from 'axios';
 import DataProvider from './DataProvider';
 import { apiUrls } from '../constans/apiUrls';
+import { sevenDaysRangeISO8601 } from '../utils/sevenDaysRangeISO8601';
 
 class ExchangeRateDataProvider extends DataProvider {
-  public create(startDate: Date): Promise<any> {
+  public getTableA(date: Date): Promise<any> {
+    const url =
+      apiUrls.tableA + sevenDaysRangeISO8601(date) + apiUrls.urlSuffix;
+
     return this.axios
-      .post(apiUrls.tableA + startDate.toISOString() + apiUrls.urlSuffix)
-      .then((response: AxiosResponse<any>) => response.data);
+      .get(url)
+      .then((response: AxiosResponse<any>) => response.data[0]);
   }
 }
 
