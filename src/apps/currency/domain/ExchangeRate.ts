@@ -1,15 +1,15 @@
-export interface ExchangeRateFiels {
+export interface ExchangeRateFields {
   currency: string;
   code: string;
   mid: number;
 }
 
-class ExchangeRate implements ExchangeRateFiels {
+class ExchangeRate implements ExchangeRateFields {
   readonly currency: string;
   readonly code: string;
   readonly mid: number;
 
-  constructor(data: ExchangeRateFiels) {
+  constructor(data: ExchangeRateFields) {
     this.currency = data.currency;
     this.mid = data.mid;
     this.code = data.code;
