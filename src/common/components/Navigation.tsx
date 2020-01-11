@@ -39,7 +39,7 @@ const Brick = styled(Link).attrs(props => ({
 }))`
   /* 1. Box model: */
   box-sizing: border-box;
-  width: 30rem;
+  width: 25rem;
   min-height: 5rem;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -55,10 +55,20 @@ const Brick = styled(Link).attrs(props => ({
   /* 5 .Misc: */
 `;
 
+const Home = styled(Brick)`
+  /* 1. Box model: */
+  width: 10rem;
+  /* 2. Positioning: */
+  /* 3. Visual (Borders & Background): */
+  /* 4. Typography: */
+  /* 5 .Misc: */
+`;
+
 const Navigation: React.FC = () => {
   return (
     <Wrapper>
       <Paper>
+        <Home to={appUrls.home}>Home</Home>
         <Brick to={appUrls.exchangeRateApp}>App 1</Brick>
         <Brick to={appUrls.weatherApp}>App 2</Brick>
         <Brick to={appUrls.gpApp}>App 3</Brick>
