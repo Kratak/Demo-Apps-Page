@@ -3,6 +3,7 @@
   - actions
   - reducers
   - currencyApp lifecycle
+- domain update for https://demo.app.kratak.pl/
 
 #### v0.2.0 NBP API integration
 - `axios` added
