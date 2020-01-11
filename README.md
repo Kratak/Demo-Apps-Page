@@ -8,7 +8,7 @@ You can check current work at [pulls] and plans at [issues].
 
 ### Live page 
 
-[master branch live @netlify](https://demo.app.kratak.pl//)
+[master branch live @netlify](https://demo.app.kratak.pl/)
 
 ### version v0.2.0
 
@@ -23,5 +23,5 @@ Wrapper will includes whole integration for:
 [MIT License](https://github.com/Kratak/Demo-Apps-Page/blob/master/LICENSE)
 
 
-[branches]: https://github.com/Kratak/Demo-Apps-Page/pulls
+[pulls]: https://github.com/Kratak/Demo-Apps-Page/pulls
 [issues]: https://github.com/Kratak/Demo-Apps-Page/issues
