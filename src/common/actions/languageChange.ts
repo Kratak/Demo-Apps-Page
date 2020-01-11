@@ -1,5 +1,5 @@
 import { Dispatch, AnyAction } from "redux";
-import { CombineStoreFields } from "../../reducers";
+import { StoreFields } from "../../reducers";
 import { Language } from "../interfaces/avaibleLangueges";
 import { ActionTypes } from "../constans/actionTypes";
 
@@ -10,7 +10,7 @@ export const dispatchLanguage = (language: Language) => ({
 
 export const changeLanguage = (language: Language) => (
   dispatch: Dispatch<AnyAction>,
-  getStore: () => CombineStoreFields
+  getStore: () => StoreFields
 ) => {
   if (getStore().languageChange.language !== Language.Dev) {
     dispatch(dispatchLanguage(language));

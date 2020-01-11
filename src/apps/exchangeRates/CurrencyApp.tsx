@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { PageSettingsFields } from '../../common/reducers/languageChange';
 import { Language } from '../../common/interfaces/avaibleLangueges';
 import { changeLanguage } from '../../common/actions/languageChange';
-import { CombineStoreFields } from '../../reducers';
+import { StoreFields } from '../../reducers';
 
 interface DispatchProps {
   pageSettings: typeof changeLanguage;
@@ -54,7 +54,7 @@ class CurrencyApp extends React.Component<Props, State> {
   }
 }
 
-const mapStateToProps = (state: CombineStoreFields): StateProps => ({
+const mapStateToProps = (state: StoreFields): StateProps => ({
   pageSettingsState: state.languageChange,
 });
 
