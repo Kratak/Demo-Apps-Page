@@ -8,7 +8,7 @@ You can check current work at [pulls] and plans at [issues].
 
 ### Live page 
 
-[master branch live @netlify](https://suspicious-roentgen-a39454.netlify.com/)
+[master branch live @netlify](https://demo.app.kratak.pl//)
 
 ### version v0.2.0
 
