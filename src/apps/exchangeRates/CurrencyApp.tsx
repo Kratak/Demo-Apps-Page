@@ -5,13 +5,17 @@ import { PageSettingsFields } from '../../common/reducers/languageChange';
 import { Language } from '../../common/interfaces/avaibleLangueges';
 import { changeLanguage } from '../../common/actions/languageChange';
 import { StoreFields } from '../../reducers';
+import { fetchExchangeRates } from './actions/list';
+import { ExchangeRatesListState } from './reducers/list';
 
 interface DispatchProps {
   pageSettings: typeof changeLanguage;
+  fetchExchangeRates: typeof fetchExchangeRates;
 }
 
 interface StateProps {
   pageSettingsState: PageSettingsFields;
+  exchangeRates: ExchangeRatesListState;
 }
 
 interface Props extends DispatchProps, StateProps {}
@@ -28,6 +32,10 @@ class CurrencyApp extends React.Component<Props, State> {
     };
   }
 
+  public componentDidMount(): void {
+    this.props.fetchExchangeRates(new Date());
+  }
+
   public componentDidUpdate(
     prevProps: Readonly<Props>,
     prevState: Readonly<State>
@@ -39,16 +47,35 @@ class CurrencyApp extends React.Component<Props, State> {
 
   public render(): JSX.Element {
     return (
-      <div>
-        <div style={{ width: 250, height: 250, backgroundColor: 'red' }}>
-          current language is {this.props.pageSettingsState.language}
-        </div>
-        <div onClick={() => this.props.pageSettings(Language.Pl)}>
-          zmień na pl
-        </div>
-        <div onClick={() => this.props.pageSettings(Language.Eng)}>
-          zmień na eng
-        </div>
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          width: '105rem',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          alignSelf: 'center',
+          margin: '2rem',
+        }}
+      >
+        {this.props.exchangeRates.value.map(rate => {
+          return (
+            <div
+              style={{
+                boxSizing: 'border-box',
+                backgroundColor: 'slategray',
+                width: '20rem',
+                height: '15rem',
+                padding: '1rem',
+                marginBottom: '1rem',
+              }}
+            >
+              <p>ISO4217: {rate.code}</p>
+              <p>Nazwa: {rate.currency}</p>
+              <p>1 PLN = {rate.mid + ' ' + rate.code}</p>
+            </div>
+          );
+        })}
       </div>
     );
   }
@@ -56,10 +83,14 @@ class CurrencyApp extends React.Component<Props, State> {
 
 const mapStateToProps = (state: StoreFields): StateProps => ({
   pageSettingsState: state.languageChange,
+  exchangeRates: state.currencyAppReducers.exchangeRatesList,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
-  ...bindActionCreators({ pageSettings: changeLanguage }, dispatch),
+  ...bindActionCreators(
+    { pageSettings: changeLanguage, fetchExchangeRates },
+    dispatch
+  ),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CurrencyApp);
