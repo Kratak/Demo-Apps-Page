@@ -7,7 +7,7 @@ export type urlsFields = {
 };
 
 export const apiUrls: urlsFields = {
-  baseUrl: 'http://api.nbp.pl/api/',
+  baseUrl: 'https://api.nbp.pl/api/',
   urlSuffix: '/?format=json',
 
   // methods
