@@ -1,3 +1,6 @@
+#### v0.2.2
+- rounded flags svg's included
+
 #### v0.2.1
 - exchangeRates 
   - actions
