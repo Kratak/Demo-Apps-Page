@@ -33,7 +33,7 @@ class CurrencyApp extends React.Component<Props, State> {
   }
 
   public componentDidMount(): void {
-    if (!!this.props.exchangeRates.value) {
+    if (!this.props.exchangeRates.value) {
       this.props.fetchExchangeRates(new Date());
     }
   }
