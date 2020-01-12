@@ -8,16 +8,16 @@ import {
 import {
   currencyAppReducers,
   CurrencyAppState,
-} from './apps/currency/reducers/reducers';
+} from './apps/exchangeRates/reducers/reducers';
 
-export interface CombineStoreFields {
+export interface StoreFields {
   router: LocationState;
   languageChange: LanguageChangeState;
   currencyAppReducers: CurrencyAppState;
 }
 
-export const createRootReducer = (history: History<CombineStoreFields>) =>
-  combineReducers<CombineStoreFields>({
+export const createRootReducer = (history: History<StoreFields>) =>
+  combineReducers<StoreFields>({
     router: connectRouter(history),
     languageChange: languageChangeReducer,
     currencyAppReducers: currencyAppReducers,

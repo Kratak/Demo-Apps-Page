@@ -6,7 +6,7 @@ import { configureStore, history } from './configureStore';
 import Navigation from './common/components/Navigation';
 import BodyContent from './common/components/BodyContetn';
 import GlobalStyles from './common/components/GlobalStyle';
-import CurrencyApp from './apps/currency/CurrencyApp';
+import CurrencyApp from './apps/exchangeRates/CurrencyApp';
 import { appUrls } from './common/constans/appUrls';
 
 const store = configureStore();
