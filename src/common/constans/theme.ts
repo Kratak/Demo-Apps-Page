@@ -22,6 +22,10 @@ export enum DashboardColors {
 }
 
 interface PalletFields {
+  generics: {
+    black: string;
+    deepBlack: string;
+  };
   dashboard: { [key in DashboardColors]: string };
   currencyApp: {
     magenta: string;
@@ -57,6 +61,10 @@ interface ThemeFields {
 
 const pallets: PalletsFields = {
   default: {
+    generics: {
+      black: '#000000',
+      deepBlack: '#12000F',
+    },
     dashboard: {
       navyBlue: '#0F1626',
       leather: '#AB987A',

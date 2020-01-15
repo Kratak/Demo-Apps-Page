@@ -54,10 +54,16 @@ const Brick = styled(Link).attrs(props => ({
   /* 4. Typography: */
   color: ${({ theme }) => theme.pallet.dashboard.eggshell};
   text-decoration: none;
+  text-align: center;
+  -webkit-text-stroke: 0.03rem ${({ theme }) => theme.pallet.generics.deepBlack};
   font-size: 2rem;
   font-weight: bold;
-  text-align: center;
   /* 5 .Misc: */
+  :hover {
+    background-color: ${({ theme, variant }) =>
+      theme.pallet.dashboard[variant]}DD;
+    color: ${({ theme }) => theme.pallet.dashboard.leather}99;
+  }
 `;
 
 const Home = styled(Brick)`
@@ -66,7 +72,6 @@ const Home = styled(Brick)`
   /* 2. Positioning: */
   /* 3. Visual (Borders & Background): */
   /* 4. Typography: */
-  color: ${({ theme }) => theme.pallet.dashboard.navyBlue};
   /* 5 .Misc: */
 `;
 
