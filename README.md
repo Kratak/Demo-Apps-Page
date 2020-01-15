@@ -10,7 +10,7 @@ You can check current work at [pulls] and plans at [issues].
 
 [master branch live @netlify](https://demo.app.kratak.pl/)
 
-### version v0.2.2
+### version v0.3.0
 
 It is simple Page wrapper for my another apps.
 Wrapper will includes whole integration for:
