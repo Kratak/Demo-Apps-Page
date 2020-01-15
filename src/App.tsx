@@ -9,7 +9,7 @@ import GlobalStyles from './common/components/GlobalStyle';
 import CurrencyApp from './apps/exchangeRates/CurrencyApp';
 import { appUrls } from './common/constans/appUrls';
 import { ThemeProvider } from 'styled-components';
-import * as theme from './common/constans/theme';
+import { PalletsNames, theme } from './common/constans/theme';
 
 const store = configureStore();
 
@@ -20,8 +20,8 @@ const App: React.FC = () => {
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <ThemeProvider
-            theme={{ config: theme.config, pallet: theme.pallets['default'] }}
-            // theme={{ config: theme.config, pallet: theme.pallet[store.getState().] }}
+            theme={theme(PalletsNames.DEFAULT)}
+            // theme={theme(store.getState().languageChange.}
           >
             <BodyContent>
               <Navigation />
