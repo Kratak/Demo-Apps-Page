@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import { styled } from '../constans/theme';
 import { classNames } from '../constans/classNames';
 
-const BodyContent = styled.div.attrs(props => ({
-  className: props.className || classNames.body_content,
+const PageWrapper = styled.div.attrs(props => ({
+  className: props.className || classNames.pageWrapper,
 }))`
   /*  1. Box model: */
   display: flex;
@@ -15,4 +15,4 @@ const BodyContent = styled.div.attrs(props => ({
   /*  5 .Misc: */
 `;
 
-export default BodyContent;
+export default PageWrapper;

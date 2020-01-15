@@ -3,18 +3,21 @@ export type classNamesFields = {
   paper: string;
 
   // body
-  body_content: string;
+  pageWrapper: string;
+  pageWrapper__element: () => string;
 
   // navigation
   navigation_wrapper: string;
   brick: string;
 };
+
 export const classNames: classNamesFields = {
   // common
   paper: 'paper',
 
   // body
-  body_content: 'body-content',
+  pageWrapper: 'page-wrapper',
+  'pageWrapper__element': () => classNames.pageWrapper + '__element',
 
   // navigation
   navigation_wrapper: 'navigation-wrapper',

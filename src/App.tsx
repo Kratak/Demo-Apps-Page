@@ -4,12 +4,12 @@ import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
 import { configureStore, history } from './configureStore';
 import Navigation from './common/components/Navigation';
-import BodyContent from './common/components/BodyContetn';
+import PageWrapper from './common/styles/PageWrapper';
 import GlobalStyles from './common/components/GlobalStyle';
 import CurrencyApp from './apps/exchangeRates/CurrencyApp';
 import { appUrls } from './common/constans/appUrls';
 import { ThemeProvider } from 'styled-components';
-import { PalletsNames, theme } from './common/constans/theme';
+import { PalletsNames, theme, pallets } from './common/constans/theme';
 
 const store = configureStore();
 
@@ -20,10 +20,13 @@ const App: React.FC = () => {
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <ThemeProvider
-            theme={theme(PalletsNames.DEFAULT)}
-            // theme={theme(store.getState().languageChange.}
+            theme={{
+              config: theme.config,
+              pallet: pallets[PalletsNames.DEFAULT],
+              // pallet: pallets[store.getState().languageChange.locale],
+            }}
           >
-            <BodyContent>
+            <PageWrapper>
               <Navigation />
               <Switch>
                 <Route
@@ -38,7 +41,7 @@ const App: React.FC = () => {
                 />
                 <Route exact path={appUrls.gpApp} component={CurrencyApp} />
               </Switch>
-            </BodyContent>
+            </PageWrapper>
           </ThemeProvider>
         </ConnectedRouter>
       </Provider>
