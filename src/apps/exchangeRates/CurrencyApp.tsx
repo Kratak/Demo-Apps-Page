@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
+import Uuid from '../../common/utils/Uuid';
 import { PageSettingsFields } from '../../common/reducers/languageChange';
 import { changeLanguage } from '../../common/actions/languageChange';
 import { StoreFields } from '../../reducers';
 import { fetchExchangeRates } from './actions/list';
 import { ExchangeRatesListState } from './reducers/list';
 import { ExchangeRatesLayout } from './styles/ExchangeRatesLayout';
-import Uuid from '../../common/utils/Uuid';
 
 interface DispatchProps {
   pageSettings: typeof changeLanguage;

@@ -1,9 +1,12 @@
+#### v0.3.1
+- uuid generator
+- RWD for exchangerRates
+
 #### v0.3.0 GENERAL STYLE GUIDE
 - 4 different color packages per ech app
 - RWD Suport 
 - packages update
 - added `bignumber`, `uuid`, `classnames`
-- uuid generator
 
 #### v0.2.2
 - rounded flags svg's included
