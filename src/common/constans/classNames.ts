@@ -3,20 +3,25 @@ export type classNamesFields = {
   paper: string;
 
   // body
-  body_content: string;
+  pageWrapper: string;
+  pageWrapper__element: string;
 
   // navigation
-  navigation_wrapper: string;
-  brick: string;
+  navigation: string;
+  navigation__paper: string;
+  navigation__button: string;
 };
+
 export const classNames: classNamesFields = {
   // common
   paper: 'paper',
 
   // body
-  body_content: 'body-content',
+  pageWrapper: 'page-wrapper',
+  pageWrapper__element: 'page-wrapper__element',
 
   // navigation
-  navigation_wrapper: 'navigation-wrapper',
-  brick: 'brick',
+  navigation: 'navigation',
+  navigation__paper: 'navigation__paper',
+  navigation__button: 'navigation__button',
 };

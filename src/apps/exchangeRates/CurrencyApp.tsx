@@ -2,7 +2,6 @@ import * as React from 'react';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { PageSettingsFields } from '../../common/reducers/languageChange';
-import { Language } from '../../common/interfaces/avaibleLangueges';
 import { changeLanguage } from '../../common/actions/languageChange';
 import { StoreFields } from '../../reducers';
 import { fetchExchangeRates } from './actions/list';
@@ -19,31 +18,12 @@ interface StateProps {
 }
 
 interface Props extends DispatchProps, StateProps {}
-interface State {
-  language: Language;
-}
+interface State {}
 
 class CurrencyApp extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-
-    this.state = {
-      language: Language.Eng,
-    };
-  }
-
   public componentDidMount(): void {
-    if (!this.props.exchangeRates.value) {
+    if (this.props.exchangeRates.value.length === 0) {
       this.props.fetchExchangeRates(new Date());
-    }
-  }
-
-  public componentDidUpdate(
-    prevProps: Readonly<Props>,
-    prevState: Readonly<State>
-  ): void {
-    if (prevState.language !== this.props.pageSettingsState.language) {
-      this.setState({ language: this.props.pageSettingsState.language });
     }
   }
 
@@ -63,6 +43,7 @@ class CurrencyApp extends React.Component<Props, State> {
         {this.props.exchangeRates.value.map(rate => {
           return (
             <div
+              key={JSON.stringify(rate)}
               style={{
                 boxSizing: 'border-box',
                 backgroundColor: 'slategray',
