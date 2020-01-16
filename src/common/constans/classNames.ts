@@ -4,11 +4,12 @@ export type classNamesFields = {
 
   // body
   pageWrapper: string;
-  pageWrapper__element: () => string;
+  pageWrapper__element: string;
 
   // navigation
-  navigation_wrapper: string;
-  brick: string;
+  navigation: string;
+  navigation__paper: string;
+  navigation__button: string;
 };
 
 export const classNames: classNamesFields = {
@@ -17,9 +18,10 @@ export const classNames: classNamesFields = {
 
   // body
   pageWrapper: 'page-wrapper',
-  'pageWrapper__element': () => classNames.pageWrapper + '__element',
+  pageWrapper__element: 'page-wrapper__element',
 
   // navigation
-  navigation_wrapper: 'navigation-wrapper',
-  brick: 'brick',
+  navigation: 'navigation',
+  navigation__paper: 'navigation__paper',
+  navigation__button: 'navigation__button',
 };

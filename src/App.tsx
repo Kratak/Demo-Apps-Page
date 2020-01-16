@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
 import { configureStore, history } from './configureStore';
 import Navigation from './common/components/Navigation';
-import PageWrapper from './common/styles/PageWrapper';
+import PageWrapperBlock from './common/styles/PageWrapperBlock';
 import GlobalStyles from './common/components/GlobalStyle';
 import CurrencyApp from './apps/exchangeRates/CurrencyApp';
 import { appUrls } from './common/constans/appUrls';
@@ -26,7 +26,7 @@ const App: React.FC = () => {
               // pallet: pallets[store.getState().languageChange.locale],
             }}
           >
-            <PageWrapper>
+            <PageWrapperBlock>
               <Navigation />
               <Switch>
                 <Route
@@ -41,7 +41,7 @@ const App: React.FC = () => {
                 />
                 <Route exact path={appUrls.gpApp} component={CurrencyApp} />
               </Switch>
-            </PageWrapper>
+            </PageWrapperBlock>
           </ThemeProvider>
         </ConnectedRouter>
       </Provider>

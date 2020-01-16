@@ -1,7 +1,7 @@
 import { styled } from '../constans/theme';
 import { classNames } from '../constans/classNames';
 
-const PageWrapper = styled.div.attrs(props => ({
+const PageWrapperBlock = styled.div.attrs(props => ({
   className: props.className || classNames.pageWrapper,
 }))`
   /*  1. Box model: */
@@ -15,4 +15,4 @@ const PageWrapper = styled.div.attrs(props => ({
   /*  5 .Misc: */
 `;
 
-export default PageWrapper;
+export default PageWrapperBlock;
