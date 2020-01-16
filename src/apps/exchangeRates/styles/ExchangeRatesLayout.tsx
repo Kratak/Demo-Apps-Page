@@ -4,6 +4,18 @@ import { classNames } from '../../../common/constans/classNames';
 const Paper = styled.div.attrs(props => ({
   className: props.className || classNames.exchangeRates__paper,
 }))`
+  /* 1. Box model: */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  width: 80vw;
+  /* 2. Positioning: */
+  align-self: center;
+  /* 3. Visual (Borders & Background): */
+  /* 4. Typography: */
+  /* 5 .Misc: */
   @${({ theme }) => theme.config.media.breakpoints.md} {
     /* 1. Box model: */
     flex-direction: row;
@@ -17,18 +29,6 @@ const Paper = styled.div.attrs(props => ({
   @${({ theme }) => theme.config.media.breakpoints.lg} {
     width: 90rem;
   }
-  /* 1. Box model: */
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  flex-direction: column;
-  width: 80vw;
-  /* 2. Positioning: */
-  align-self: center;
-  /* 3. Visual (Borders & Background): */
-  /* 4. Typography: */
-  /* 5 .Misc: */
 `;
 
 const SelectedCurrencyRate = styled.div.attrs(props => ({
@@ -48,7 +48,7 @@ const CurrencyRatesWrapper = styled.div.attrs(props => ({
 }))`
   /* 1. Box model: */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   padding: 1rem;
@@ -57,6 +57,9 @@ const CurrencyRatesWrapper = styled.div.attrs(props => ({
   /* 3. Visual (Borders & Background): */
   /* 4. Typography: */
   /* 5 .Misc: */
+  @${({ theme }) => theme.config.media.breakpoints.md} {
+    justify-content: space-between;
+  }
 `;
 
 const CurrencyRate = styled.div.attrs(props => ({
