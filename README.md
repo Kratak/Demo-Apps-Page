@@ -10,7 +10,7 @@ You can check current work at [pulls] and plans at [issues].
 
 [master branch live @netlify](https://demo.app.kratak.pl/)
 
-### version v0.3.0
+### version v0.3.1
 
 It is simple Page wrapper for my another apps.
 Wrapper will includes whole integration for:
@@ -19,6 +19,10 @@ Wrapper will includes whole integration for:
 - i18n translation
 - color themes handling
 - rwd / scaling
+
+### Changelog
+
+[CHANGELOG](https://github.com/Kratak/Demo-Apps-Page/blob/master/CHANGELOGS.md)
 
 ### License
 
