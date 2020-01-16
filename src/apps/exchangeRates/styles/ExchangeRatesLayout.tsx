@@ -1,26 +1,31 @@
-import { DashboardColors, styled } from '../../../common/constans/theme';
+import { styled } from '../../../common/constans/theme';
 import { classNames } from '../../../common/constans/classNames';
 
 const Paper = styled.div.attrs(props => ({
   className: props.className || classNames.exchangeRates__paper,
 }))`
   @${({ theme }) => theme.config.media.breakpoints.md} {
+    /* 1. Box model: */
     flex-direction: row;
+    padding: 2rem;
+    margin: 2rem;
+    /* 2. Positioning: */
+    /* 3. Visual (Borders & Background): */
+    /* 4. Typography: */
+    /* 5 .Misc: */
   }
   @${({ theme }) => theme.config.media.breakpoints.lg} {
     width: 90rem;
   }
   /* 1. Box model: */
-  align-self: center;
-  align-items: center;
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
   flex-direction: column;
   width: 80vw;
-  flex-wrap: wrap;
-  padding: 2rem;
-  margin: 2rem;
-  justify-content: space-between;
   /* 2. Positioning: */
+  align-self: center;
   /* 3. Visual (Borders & Background): */
   /* 4. Typography: */
   /* 5 .Misc: */
@@ -38,13 +43,17 @@ const Search = styled.div.attrs(props => ({
   className: props.className || classNames.exchangeRates__search,
 }))``;
 
-const CurrencyWrapper = styled.div.attrs(props => ({
+const CurrencyRatesWrapper = styled.div.attrs(props => ({
   className: props.className || classNames.exchangeRates__currencyWrapper,
 }))`
   /* 1. Box model: */
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
   /* 2. Positioning: */
-  //align-self: center;
+  align-self: center;
   /* 3. Visual (Borders & Background): */
   /* 4. Typography: */
   /* 5 .Misc: */
@@ -52,37 +61,43 @@ const CurrencyWrapper = styled.div.attrs(props => ({
 
 const CurrencyRate = styled.div.attrs(props => ({
   className: props.className || classNames.exchangeRates__currencyRate,
-}))<{ variant: DashboardColors }>`
+}))`
   /* 1. Box model: */
   box-sizing: border-box;
-  width: 25rem;
-  min-height: 5rem;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
+  display: flex;
+  width: 35rem;
+  height: 15rem;
+  margin: 1rem;
   /* 2. Positioning: */
   /* 3. Visual (Borders & Background): */
-  background-color: ${({ theme, variant }) => theme.pallet.dashboard[variant]};
-  border-radius: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 7.5rem/50%;
   /* 4. Typography: */
-  color: ${({ theme }) => theme.pallet.dashboard.eggshell};
-  text-decoration: none;
-  text-align: center;
-  -webkit-text-stroke: 0.03rem ${({ theme }) => theme.pallet.generics.deepBlack};
-  font-size: 2rem;
-  font-weight: bold;
   /* 5 .Misc: */
-  :hover {
-    background-color: ${({ theme, variant }) =>
-      theme.pallet.dashboard[variant]}DD;
-    color: ${({ theme }) => theme.pallet.dashboard.leather}99;
-  }
+`;
+
+const CurrencyRate__Flag = styled.div.attrs(props => ({
+  className: props.className || classNames.exchangeRates__currencyRate,
+}))`
+  /* 1. Box model: */
+  box-sizing: border-box;
+  display: flex;
+  width: 15rem;
+  height: 15rem;
+  margin: 1rem;
+  /* 2. Positioning: */
+  /* 3. Visual (Borders & Background): */
+  border-radius: 50%;
+  /* 4. Typography: */
+  /* 5 .Misc: */
 `;
 
 export const ExchangeRatesLayout = {
   Paper,
   Calculator,
   CurrencyRate,
-  CurrencyWrapper,
+  CurrencyRatesWrapper,
+  CurrencyRate__Flag,
   SelectedCurrencyRate,
   Search,
 };
