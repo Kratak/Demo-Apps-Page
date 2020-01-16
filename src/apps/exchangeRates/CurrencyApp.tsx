@@ -6,6 +6,8 @@ import { changeLanguage } from '../../common/actions/languageChange';
 import { StoreFields } from '../../reducers';
 import { fetchExchangeRates } from './actions/list';
 import { ExchangeRatesListState } from './reducers/list';
+import { ExchangeRatesLayout } from './styles/ExchangeRatesLayout';
+import Uuid from '../../common/utils/Uuid';
 
 interface DispatchProps {
   pageSettings: typeof changeLanguage;
@@ -29,21 +31,11 @@ class CurrencyApp extends React.Component<Props, State> {
 
   public render(): JSX.Element {
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          width: '105rem',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          alignSelf: 'center',
-          margin: '2rem',
-        }}
-      >
+      <ExchangeRatesLayout.Paper>
         {this.props.exchangeRates.value.map(rate => {
           return (
             <div
-              key={JSON.stringify(rate)}
+              key={Uuid.generate()}
               style={{
                 boxSizing: 'border-box',
                 backgroundColor: 'slategray',
@@ -59,7 +51,7 @@ class CurrencyApp extends React.Component<Props, State> {
             </div>
           );
         })}
-      </div>
+      </ExchangeRatesLayout.Paper>
     );
   }
 }

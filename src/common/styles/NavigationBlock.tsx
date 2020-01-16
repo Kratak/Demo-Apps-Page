@@ -30,6 +30,7 @@ const Paper = styled.div.attrs(props => ({
   flex-wrap: wrap;
   padding: 2rem;
   justify-content: space-between;
+  align-items: center;
   /* 2. Positioning: */
   /* 3. Visual (Borders & Background): */
   /* 4. Typography: */
