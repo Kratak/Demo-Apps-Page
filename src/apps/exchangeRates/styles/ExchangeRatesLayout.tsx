@@ -68,7 +68,7 @@ const CurrencyRate = styled.div.attrs(props => ({
   /* 1. Box model: */
   box-sizing: border-box;
   display: flex;
-  width: 35rem;
+  width: 30rem;
   height: 15rem;
   margin: 1rem;
   /* 2. Positioning: */
@@ -77,22 +77,47 @@ const CurrencyRate = styled.div.attrs(props => ({
   border-radius: 7.5rem/50%;
   /* 4. Typography: */
   /* 5 .Misc: */
+  @${({ theme }) => theme.config.media.breakpoints.md} {
+   width: 35rem;
+  }
 `;
 
 const CurrencyRate__Flag = styled.div.attrs(props => ({
-  className: props.className || classNames.exchangeRates__currencyRate,
+  className: props.className || classNames.exchangeRates__currencyRate_flag,
 }))`
   /* 1. Box model: */
   box-sizing: border-box;
   display: flex;
   width: 15rem;
   height: 15rem;
-  margin: 1rem;
   /* 2. Positioning: */
   /* 3. Visual (Borders & Background): */
   border-radius: 50%;
+  background-color: aliceblue;
   /* 4. Typography: */
   /* 5 .Misc: */
+`;
+
+const CurrencyRate__Description = styled.div.attrs(props => ({
+  className: props.className || classNames.exchangeRates__currencyRate_description,
+}))`
+  /* 1. Box model: */
+  display: flex;
+  max-width: 15rem;
+  flex-direction: column;
+  margin: 1rem;
+  justify-content: space-around;
+  /* 2. Positioning: */
+  /* 3. Visual (Borders & Background): */
+  /* 4. Typography: */
+  p {
+  margin: .5rem;
+  font-size: 1.2rem;
+  }
+  /* 5 .Misc: */
+  @${({ theme }) => theme.config.media.breakpoints.md} {
+   font-size: 1.6rem;
+  }
 `;
 
 export const ExchangeRatesLayout = {
@@ -100,6 +125,7 @@ export const ExchangeRatesLayout = {
   Calculator,
   CurrencyRate,
   CurrencyRatesWrapper,
+  CurrencyRate__Description,
   CurrencyRate__Flag,
   SelectedCurrencyRate,
   Search,
