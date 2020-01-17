@@ -3,6 +3,7 @@ import { converter } from '../utils/calculateExchanagerRateConverter';
 import { ExchangeRatesLayout } from '../styles/ExchangeRatesLayout';
 import React from 'react';
 import ExchangeRate from '../domain/ExchangeRate';
+import { Flag } from '../utils/flagSelector';
 
 interface Props {
   rate: ExchangeRate | null;
@@ -25,7 +26,9 @@ const SelectedRate = (props: Props): JSX.Element => {
 
   return (
     <ExchangeRatesLayout.CurrencyRate selected>
-      <ExchangeRatesLayout.CurrencyRate__Flag />
+      <ExchangeRatesLayout.CurrencyRate__Flag>
+        <Flag code={rate.code} />
+      </ExchangeRatesLayout.CurrencyRate__Flag>
       <ExchangeRatesLayout.CurrencyRate__Description>
         <p>Wybrana waluta</p>
         <p>{rate.code + ' ' + rate.currency}</p>

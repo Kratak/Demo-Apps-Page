@@ -92,6 +92,10 @@ const CurrencyRate__Flag = styled.div.attrs(props => ({
   display: flex;
   width: 15rem;
   height: 15rem;
+  svg{
+  width: 100%;
+  height: 100%;
+  }
   /* 2. Positioning: */
   /* 3. Visual (Borders & Background): */
   border-radius: 50%;

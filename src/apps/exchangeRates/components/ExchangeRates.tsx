@@ -4,6 +4,7 @@ import ExchangeRate from '../domain/ExchangeRate';
 import Uuid from '../../../common/utils/Uuid';
 import { ExchangeRatesLayout } from '../styles/ExchangeRatesLayout';
 import { converter } from '../utils/calculateExchanagerRateConverter';
+import { Flag } from '../utils/flagSelector';
 
 interface Props {
   onRateSelect: (exchangeRate: ExchangeRate) => void;
@@ -34,7 +35,9 @@ const ExchangeRatesSelect = ({
             key={Uuid.generate()}
             onClick={() => onRateSelect(rate)}
           >
-            <ExchangeRatesLayout.CurrencyRate__Flag />
+            <ExchangeRatesLayout.CurrencyRate__Flag>
+              <Flag code={rate.code} />
+            </ExchangeRatesLayout.CurrencyRate__Flag>
             <ExchangeRatesLayout.CurrencyRate__Description>
               <p>{rate.code}</p>
               <p>{rate.currency}</p>
