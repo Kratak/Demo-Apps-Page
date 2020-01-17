@@ -64,21 +64,23 @@ const CurrencyRatesWrapper = styled.div.attrs(props => ({
 
 const CurrencyRate = styled.div.attrs(props => ({
   className: props.className || classNames.exchangeRates__currencyRate,
-}))`
+}))<{ selected?: boolean }>`
   /* 1. Box model: */
   box-sizing: border-box;
   display: flex;
   width: 30rem;
-  height: 15rem;
+  height: 15.14rem;
   margin: 1rem;
   /* 2. Positioning: */
   /* 3. Visual (Borders & Background): */
-  background-color: whitesmoke;
+  background-color: ${({ selected, theme: { pallet } }) =>
+    selected ? pallet.currencyApp.beige : pallet.currencyApp.beige + '33'};
   border-radius: 7.5rem/50%;
+  border: solid 0.07rem ${({ theme: { pallet } }) => pallet.dashboard.coral};
   /* 4. Typography: */
   /* 5 .Misc: */
   @${({ theme }) => theme.config.media.breakpoints.md} {
-   width: 35rem;
+    width: ${({ selected }) => (selected ? '45' : '35')}rem;
   }
 `;
 
@@ -93,13 +95,14 @@ const CurrencyRate__Flag = styled.div.attrs(props => ({
   /* 2. Positioning: */
   /* 3. Visual (Borders & Background): */
   border-radius: 50%;
-  background-color: aliceblue;
+  border: solid 0.07rem ${({ theme: { pallet } }) => pallet.dashboard.coral};
   /* 4. Typography: */
   /* 5 .Misc: */
 `;
 
 const CurrencyRate__Description = styled.div.attrs(props => ({
-  className: props.className || classNames.exchangeRates__currencyRate_description,
+  className:
+    props.className || classNames.exchangeRates__currencyRate_description,
 }))`
   /* 1. Box model: */
   display: flex;
@@ -111,12 +114,12 @@ const CurrencyRate__Description = styled.div.attrs(props => ({
   /* 3. Visual (Borders & Background): */
   /* 4. Typography: */
   p {
-  margin: .5rem;
-  font-size: 1.2rem;
+    margin: 0.5rem;
+    font-size: 1.2rem;
   }
   /* 5 .Misc: */
   @${({ theme }) => theme.config.media.breakpoints.md} {
-   font-size: 1.6rem;
+    font-size: 1.6rem;
   }
 `;
 

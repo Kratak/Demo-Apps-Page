@@ -8,6 +8,7 @@ import { fetchExchangeRates } from './actions/list';
 import { ExchangeRatesListState } from './reducers/list';
 import { ExchangeRatesLayout } from './styles/ExchangeRatesLayout';
 import { ExchangeRatesSelect } from './components/ExchangeRates';
+import { SelectedRate } from './components/SelectedRate';
 import ExchangeRate from './domain/ExchangeRate';
 
 interface DispatchProps {
@@ -47,9 +48,7 @@ class CurrencyApp extends React.Component<Props, State> {
 
     return (
       <ExchangeRatesLayout.Paper>
-        <div style={{ width: '100%' }}>
-          {selectedRate && selectedRate.currency}
-        </div>
+        <SelectedRate rate={selectedRate} />
         <ExchangeRatesSelect
           exchangeRates={this.props.exchangeRates.value}
           onRateSelect={this.onSelectedRateChange}
