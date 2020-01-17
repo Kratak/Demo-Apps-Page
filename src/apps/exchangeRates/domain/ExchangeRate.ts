@@ -1,12 +1,14 @@
+import { Currencies } from '../constans/curriencesCodes';
+
 export interface ExchangeRateFields {
   currency: string;
-  code: string;
+  code: Currencies;
   mid: number;
 }
 
 class ExchangeRate implements ExchangeRateFields {
   readonly currency: string;
-  readonly code: string;
+  readonly code: Currencies;
   readonly mid: number;
 
   constructor(data: ExchangeRateFields) {
