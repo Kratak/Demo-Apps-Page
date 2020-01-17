@@ -1,3 +1,9 @@
+#### v0.3.1
+- uuid generator
+- RWD for exchangerRates
+- search and calculator for section
+- converter rate calculation
+
 #### v0.3.0 GENERAL STYLE GUIDE
 - 4 different color packages per ech app
 - RWD Suport 

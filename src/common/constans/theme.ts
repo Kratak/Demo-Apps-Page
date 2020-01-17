@@ -25,6 +25,7 @@ interface PalletFields {
   generics: {
     black: string;
     deepBlack: string;
+    white: string;
   };
   dashboard: { [key in DashboardColors]: string };
   currencyApp: {
@@ -64,6 +65,7 @@ const pallets: PalletsFields = {
     generics: {
       black: '#000000',
       deepBlack: '#12000F',
+      white: '#FFFFFF'
     },
     dashboard: {
       navyBlue: '#0F1626',

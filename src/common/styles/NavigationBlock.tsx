@@ -17,23 +17,27 @@ const Wrapper = styled.div.attrs(props => ({
 const Paper = styled.div.attrs(props => ({
   className: props.className || classNames.navigation__paper,
 }))`
-  @${({ theme }) => theme.config.media.breakpoints.md} {
-    flex-direction: row;
-  }
-  @${({ theme }) => theme.config.media.breakpoints.lg} {
-    width: 90rem;
-  }
   /* 1. Box model: */
   display: flex;
   flex-direction: column;
   width: 80vw;
   flex-wrap: wrap;
   padding: 2rem;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   /* 2. Positioning: */
   /* 3. Visual (Borders & Background): */
   /* 4. Typography: */
   /* 5 .Misc: */
+  @${({ theme }) => theme.config.media.breakpoints.sm} {
+    justify-content: space-between;
+  }
+  @${({ theme }) => theme.config.media.breakpoints.md} {
+    flex-direction: row;
+  }
+  @${({ theme }) => theme.config.media.breakpoints.lg} {
+    width: 90rem;
+  }
 `;
 
 const Button = styled(Link).attrs(props => ({

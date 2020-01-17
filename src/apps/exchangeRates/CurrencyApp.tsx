@@ -6,6 +6,10 @@ import { changeLanguage } from '../../common/actions/languageChange';
 import { StoreFields } from '../../reducers';
 import { fetchExchangeRates } from './actions/list';
 import { ExchangeRatesListState } from './reducers/list';
+import { ExchangeRatesLayout } from './styles/ExchangeRatesLayout';
+import { ExchangeRatesSelect } from './components/ExchangeRates';
+import { SelectedRate } from './components/SelectedRate';
+import ExchangeRate from './domain/ExchangeRate';
 
 interface DispatchProps {
   pageSettings: typeof changeLanguage;
@@ -18,9 +22,21 @@ interface StateProps {
 }
 
 interface Props extends DispatchProps, StateProps {}
-interface State {}
+interface State {
+  selectedRate: ExchangeRate | null;
+}
 
 class CurrencyApp extends React.Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+
+    this.state = {
+      selectedRate: null,
+    };
+
+    this.onSelectedRateChange = this.onSelectedRateChange.bind(this);
+  }
+
   public componentDidMount(): void {
     if (this.props.exchangeRates.value.length === 0) {
       this.props.fetchExchangeRates(new Date());
@@ -28,39 +44,21 @@ class CurrencyApp extends React.Component<Props, State> {
   }
 
   public render(): JSX.Element {
+    const { selectedRate } = this.state;
+
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          width: '105rem',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          alignSelf: 'center',
-          margin: '2rem',
-        }}
-      >
-        {this.props.exchangeRates.value.map(rate => {
-          return (
-            <div
-              key={JSON.stringify(rate)}
-              style={{
-                boxSizing: 'border-box',
-                backgroundColor: 'slategray',
-                width: '20rem',
-                height: '15rem',
-                padding: '1rem',
-                marginBottom: '1rem',
-              }}
-            >
-              <p>ISO4217: {rate.code}</p>
-              <p>Nazwa: {rate.currency}</p>
-              <p>1 PLN = {rate.mid + ' ' + rate.code}</p>
-            </div>
-          );
-        })}
-      </div>
+      <ExchangeRatesLayout.Paper>
+        <SelectedRate rate={selectedRate} />
+        <ExchangeRatesSelect
+          exchangeRates={this.props.exchangeRates.value}
+          onRateSelect={this.onSelectedRateChange}
+        />
+      </ExchangeRatesLayout.Paper>
     );
+  }
+
+  public onSelectedRateChange(selectedRate: ExchangeRate): void {
+    this.setState({ selectedRate });
   }
 }
 
