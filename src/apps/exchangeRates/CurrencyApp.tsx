@@ -10,6 +10,7 @@ import { ExchangeRatesLayout } from './styles/ExchangeRatesLayout';
 import { ExchangeRatesSelect } from './components/ExchangeRates';
 import { SelectedRate } from './components/SelectedRate';
 import ExchangeRate from './domain/ExchangeRate';
+import { t } from '../../i18n/i18n';
 
 interface DispatchProps {
   pageSettings: typeof changeLanguage;
@@ -49,6 +50,7 @@ class CurrencyApp extends React.Component<Props, State> {
     return (
       <ExchangeRatesLayout.Paper>
         <SelectedRate rate={selectedRate} />
+        {t('common.day')}
         <ExchangeRatesSelect
           exchangeRates={this.props.exchangeRates.value}
           onRateSelect={this.onSelectedRateChange}
