@@ -1,3 +1,10 @@
+#### v0.3.3
+- i18n translation
+- switch button
+
+#### v0.3.2
+- flags display
+
 #### v0.3.1
 - uuid generator
 - RWD for exchangerRates
